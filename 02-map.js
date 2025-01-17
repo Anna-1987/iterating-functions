@@ -66,4 +66,13 @@ const upatedPlayers2 = players.map(player => {
     }
     return player;
 });
+
+// const playerIdToUpdate = 'player-3';
+
+// const upatedPlayers2 = players.map(player => 
+//     player.id === playerIdToUpdate
+//         ? {...player,
+//            timePlayed: player.timePlayed + 100,
+//       } : player,
+// );
 console.table(upatedPlayers2);
