@@ -109,3 +109,14 @@ console.log('allTag', allTag);
 console.log('allTag2', allTag2);
 
 
+const tagsStats = tweets.flatMap(t => t.tag)
+    .reduce((acc, tag) => {
+return {
+    ...acc,
+    [tag]: acc[tag] ? acc[tag] + 1 : 1,
+};
+}, {});
+
+console.log('tagsStats', tagsStats);
+
+
