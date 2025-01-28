@@ -83,9 +83,27 @@ const byName = [...players].sort((
 console.table(byName);
 
 
-// **** ----- абстрактныйпример
+// **** ----- абстрактный пример c методом flat
 
-const array = [1, 2, [4, [5]], [6, [7, 8[9]]]];
+const array = [1, 2, [4, [5]], [6, [7, 8,[9]]]];
 
-console.log('array', array);
+console.log(array.flat(3));
 
+// **** ------- комбинация map + flat ------
+
+const tweets = [
+    { id: '000', likees: 5, tag: ['js', 'nodejs'] },
+    { id: '001', likees: 2, tag: ['html', 'css'] },
+    { id: '002', likees: 17, tag: ['html', 'js', 'nodejs'] },
+    { id: '003', likees: 8, tag: ['css', 'react'] },
+    { id: '004', likees: 0, tag: ['js', 'nodejs', 'react'] },
+    
+];
+
+// const allTag = tweets.reduce((tags, tweet) => {[...tags, ...tweet.tag]}, []);
+
+const allTag = tweets.map(t => t.tag).flat(); // хуже производительность
+const allTag2 = tweets.flatMap(t2 => t2.tag); // лучше использовать flatMap
+
+console.log('allTag', allTag);
+console.log('allTag2', allTag2);
