@@ -89,7 +89,7 @@ const array = [1, 2, [4, [5]], [6, [7, 8,[9]]]];
 
 console.log(array.flat(3));
 
-// **** ------- комбинация map + flat ------
+// **** ------- комбинация map + flat (flatMap разглаживает многоуровнеый массив)------
 
 const tweets = [
     { id: '000', likees: 5, tag: ['js', 'nodejs'] },
@@ -107,3 +107,5 @@ const allTag2 = tweets.flatMap(t2 => t2.tag); // лучше использова
 
 console.log('allTag', allTag);
 console.log('allTag2', allTag2);
+
+
